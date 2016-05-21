@@ -1,0 +1,19 @@
+{
+  "name": "razorchess",
+  "version": "1.0.0",
+  "description": "Express based chess game",
+  "main": "razorchess.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "chess",
+    "razor"
+  ],
+  "author": "tim lewis",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.13.4",
+    "pug": "^2.0.0-alpha7"
+  }
+}
