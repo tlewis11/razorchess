@@ -14,16 +14,29 @@ var myLogger = function (req, res, next) {
 app.use(myLogger);
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.get('/public', function(req, res){
-
-    res.render('index', {title: 'hey', message: 'publi'});
-});
-
-
 
 app.get('/game', function(req, res){
 
-    res.render('index', {title: 'hey', message: 'hello there'});
+    res.sendfile('./public/index.html');
+});
+
+function run_cmd(cmd, args, cb, end) {
+    var spawn = require('child_process').spawn,
+        child = spawn(cmd, args),
+        me = this;
+    child.stdout.on('data', function (buffer) { cb(me, buffer) });
+    child.stdout.on('end', end);
+}
+
+
+app.get('/calculate', function(req, res){
+
+    var foo = new run_cmd(
+        'netstat', ['-an'],
+        function (me, buffer) { me.stdout += buffer.toString() },
+        function () { res.send(me.stdout) }
+    );
+
 });
 
 

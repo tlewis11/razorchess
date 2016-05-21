@@ -34,7 +34,7 @@
 
 
         //make random move for computer
-        var makeRandomMove = function() {
+/*        var makeRandomMove = function() {
           var possibleMoves = game.moves();
 
           // game over
@@ -43,13 +43,36 @@
           var randomIndex = Math.floor(Math.random() * possibleMoves.length);
           game.move(possibleMoves[randomIndex]);
           board.position(game.fen());
+        };*/
+
+        //make random move for computer
+        var makeIntelligentMove = function() {
+          var possibleMoves = game.moves();
+
+          // game over
+          if (possibleMoves.length === 0) return;
+
+          //var randomIndex = Math.floor(Math.random() * possibleMoves.length);
+          //make api call to /calculate
+          //send the possible moves to stockfish api
+          //return the position that stockfish chooses
+         
+        $.ajax('calculate').done(function(data){
+            console.log('success')
+            console.log(data)});  
+
+            
+            moveIndex = 7; 
+            game.move(possibleMoves[moveIndex]);
+            board.position(game.fen());
         };
+
 
 
           // illegal move
           if (move === null) return 'snapback';
              
-          window.setTimeout(makeRandomMove, 250);
+          window.setTimeout(makeIntelligentMove, 250);
           updateStatus();
         };
 
