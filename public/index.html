@@ -32,9 +32,24 @@
             promotion: 'q' // NOTE: always promote to a queen for example simplicity
           });
 
+
+        //make random move for computer
+        var makeRandomMove = function() {
+          var possibleMoves = game.moves();
+
+          // game over
+          if (possibleMoves.length === 0) return;
+
+          var randomIndex = Math.floor(Math.random() * possibleMoves.length);
+          game.move(possibleMoves[randomIndex]);
+          board.position(game.fen());
+        };
+
+
           // illegal move
           if (move === null) return 'snapback';
-
+             
+          window.setTimeout(makeRandomMove, 250);
           updateStatus();
         };
 
