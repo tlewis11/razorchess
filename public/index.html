@@ -53,13 +53,13 @@
               $.get('calculate', {fen: fen_string}).done(function(data){
                 var from_square = data.slice(0,2);
                 var to_square = data.slice(2,4);
-                //chess.move({ from: from_square, to: to_square });
+                game.move({ from: from_square, to: to_square });
                 console.log(from_square, to_square);
+                board.position(game.fen());
+
               });  
 
-            var moveIndex = 2;                    
-            game.move(possibleMoves[moveIndex]);
-            board.position(game.fen());
+            //game.move(possibleMoves[moveIndex]);
           };
 
 
