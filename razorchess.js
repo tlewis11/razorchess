@@ -30,11 +30,13 @@ app.get('/game', function(req, res){
 }*/
 
 
+var bodyParser     =        require("body-parser");
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
+
 app.get('/calculate', function(req, res){
 
-
-
-
+    var fen_string = req.query.fen;
     var cmd = '/kano/razorchess/stockfish/stockfish-7-mac/Mac/stockfish-7-64'
     var spawn = require('child_process').spawn;
 
@@ -47,10 +49,10 @@ app.get('/calculate', function(req, res){
     //need to grab this stodout and make some decision on how to make the move
     stockfish.stdout.on('data', (data) => {
         var message = decoder.write(data);
-        console.log(message.trim());
+        //console.log(message.trim());
 
         var search_test = message.trim().search('bestmove'); 
-        console.log(search_test);
+        //console.log(search_test);
         if (search_test != -1) {
             
             console.log('looks good ------ ' + message.trim());
@@ -64,13 +66,12 @@ app.get('/calculate', function(req, res){
 
     console.log('======== send fen string ========');
 
-    stockfish.stdin.write('position fen r1bqkbnr/pp1ppppp/2n5/2p5/3PP3/5N2/PPP2PPP/RNBQKB1R b KQkq - 0 3\n');
-    
+    stockfish.stdin.write('position fen ' + fen_string + '\n');
+
     stockfish.stdin.write('go movetime 1000\n');
     console.log('======== get the move ========');
     console.log('======== respond with  move ========');
 
-    fen_string = '' 
     //res.send(fen_string)
 
 });

@@ -24,6 +24,8 @@
           }
         };
 
+
+        //===================
         var onDrop = function(source, target) {
           // see if the move is legal
           var move = game.move({
@@ -33,43 +35,36 @@
           });
 
 
-        //make random move for computer
-/*        var makeRandomMove = function() {
+          //make random move for computer
+          var makeIntelligentMove = function() {
           var possibleMoves = game.moves();
-
+          
+          $(possibleMoves).each(function(i, v){ 
+                                    console.log(i + ' : ' + v);
+                                });
           // game over
           if (possibleMoves.length === 0) return;
 
-          var randomIndex = Math.floor(Math.random() * possibleMoves.length);
-          game.move(possibleMoves[randomIndex]);
-          board.position(game.fen());
-        };*/
+              //var randomIndex = Math.floor(Math.random() * possibleMoves.length);
+              //make api call to /calculate
+              //send the possible moves to stockfish api
+              //return the position that stockfish chooses
+              var fen_string = game.fen()
+              $.get('calculate', {fen: fen_string}).done(function(data){
+                var from_square = data.slice(0,2);
+                var to_square = data.slice(2,4);
+                //chess.move({ from: from_square, to: to_square });
+                console.log(from_square, to_square);
+              });  
 
-        //make random move for computer
-        var makeIntelligentMove = function() {
-          var possibleMoves = game.moves();
-
-          // game over
-          if (possibleMoves.length === 0) return;
-
-          //var randomIndex = Math.floor(Math.random() * possibleMoves.length);
-          //make api call to /calculate
-          //send the possible moves to stockfish api
-          //return the position that stockfish chooses
-         
-        $.ajax('calculate').done(function(data){
-            console.log('success')
-            console.log(data)});  
-
-            
-            moveIndex = 7; 
+            var moveIndex = 2;                    
             game.move(possibleMoves[moveIndex]);
             board.position(game.fen());
-        };
+          };
 
 
 
-          // illegal move
+          // illetgal move
           if (move === null) return 'snapback';
              
           window.setTimeout(makeIntelligentMove, 250);
@@ -120,7 +115,8 @@
           position: 'start',
           onDragStart: onDragStart,
           onDrop: onDrop,
-          onSnapEnd: onSnapEnd
+          onSnapEnd: onSnapEnd,
+          //position: game.fen()//'r1bqkbnr/pp1ppppp/2n5/2p5/3PP3/5N2/PPP2PPP/RNBQKB1R  b KQkq - 0 3'
         };
         board = ChessBoard('board', cfg);
 
