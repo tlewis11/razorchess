@@ -55,7 +55,10 @@
                 var to_square = data.slice(2,4);
                 game.move({ from: from_square, to: to_square });
                 console.log(from_square, to_square);
+                updateStatus();
+
                 board.position(game.fen());
+                
 
               });  
 
@@ -68,7 +71,7 @@
           if (move === null) return 'snapback';
              
           window.setTimeout(makeIntelligentMove, 250);
-          updateStatus();
+          //updateStatus();
         };
 
         // update the board position after the piece snap 
@@ -88,6 +91,8 @@
           // checkmate?
           if (game.in_checkmate() === true) {
             status = 'Game over, ' + moveColor + ' is in checkmate.';
+            console.log('checkmate: game over');
+            alert('checkmate: game over');
           }
 
           // draw?

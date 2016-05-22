@@ -37,6 +37,7 @@ app.use(bodyParser.json());
 app.get('/calculate', function(req, res){
 
     var fen_string = req.query.fen;
+    console.log('fen: ' + fen_string);
     var cmd = '/kano/razorchess/stockfish/stockfish-7-mac/Mac/stockfish-7-64'
     var spawn = require('child_process').spawn;
 
@@ -49,14 +50,13 @@ app.get('/calculate', function(req, res){
     //need to grab this stodout and make some decision on how to make the move
     stockfish.stdout.on('data', (data) => {
         var message = decoder.write(data);
-        //console.log(message.trim());
-
-        var search_test = message.trim().search('bestmove'); 
-        //console.log(search_test);
-        if (search_test != -1) {
+        var lines = message.split('\n')[1];
+        var parts = lines.trim().split(' ')
+        var index = parts.findIndex(function(elem){return elem == 'bestmove'});
+        if (index != -1) {
             
             console.log('looks good ------ ' + message.trim());
-            res.send(message.trim().split(" ")[5]);  
+            res.send(parts[index + 1]);  
         }
     });
 
