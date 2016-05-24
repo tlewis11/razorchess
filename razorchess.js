@@ -30,7 +30,14 @@ app.get('/calculate', function(req, res){
 
     var fen_string = req.query.fen;
     console.log('fen: ' + fen_string);
-    var cmd = '/kano/razorchess/stockfish/stockfish-7-mac/Mac/stockfish-7-64'
+//==============================
+var config = require('config');
+var engine_config = config.get('Engine.path');
+console.log(engine_config);
+//================
+    var stockfish_exe_path = engine_config;
+    var cmd = stockfish_exe_path;
+    //var cmd = '/kano/razorchess/stockfish/stockfish-7-mac/Mac/stockfish-7-64'
     var spawn = require('child_process').spawn;
 
     //to decode the buffer
