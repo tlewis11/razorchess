@@ -51,7 +51,8 @@ console.log(engine_config);
         var message = decoder.write(data);
         var lines = message.split('\n')[1];
         var parts = lines.trim().split(' ')
-        var index = parts.findIndex(function(elem){return elem == 'bestmove'});
+        //var index = parts.findIndex(function(elem){return elem == 'bestmove'});
+        var index = parts.findIndex(function(elem){return elem.trim().search('bestmove') != -1})
         if (index != -1) {
             
             console.log('looks good ------ ' + message.trim());
