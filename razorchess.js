@@ -20,19 +20,11 @@ app.get('/game', function(req, res){
     res.sendfile('./public/index.html');
 });
 
-//call bash cmd - use this for communicating with stockfish
-/*function run_cmd(cmd, args, cb, end) {
-    var spawn = require('child_process').spawn,
-        child = spawn(cmd, args),
-        me = this;
-    child.stdout.on('data', function (buffer) { cb(me, buffer) });
-    child.stdout.on('end', end);
-}*/
-
-
-var bodyParser     =        require("body-parser");
+/*var bodyParser     =        require("body-parser");
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use(bodyParser.json());
+app.use(bodyParser.json());*/
+
+
 
 app.get('/calculate', function(req, res){
 
@@ -60,20 +52,11 @@ app.get('/calculate', function(req, res){
         }
     });
 
-    console.log('======== send readyok ========');
     stockfish.stdin.write('isready\n');
-    
-
-    console.log('======== send fen string ========');
 
     stockfish.stdin.write('position fen ' + fen_string + '\n');
 
     stockfish.stdin.write('go movetime 1000\n');
-    console.log('======== get the move ========');
-    console.log('======== respond with  move ========');
-
-    //res.send(fen_string)
-
 });
 
 
