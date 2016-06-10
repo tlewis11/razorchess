@@ -38,8 +38,8 @@
           //make random move for computer
           var makeIntelligentMove = function() {
           var possibleMoves = game.moves();
-          
-          $(possibleMoves).each(function(i, v){ 
+
+          $(possibleMoves).each(function(i, v){
                                     console.log(i + ' : ' + v);
                                 });
           // game over
@@ -49,7 +49,7 @@
               //make api call to /calculate
               //send the possible moves to stockfish api
               //return the position that stockfish chooses
-              var fen_string = game.fen()
+              var fen_string = game.fen();
               $.get('calculate', {fen: fen_string}).done(function(data){
                 var from_square = data.slice(0,2);
                 var to_square = data.slice(2,4);
@@ -58,9 +58,9 @@
                 updateStatus();
 
                 board.position(game.fen());
-                
 
-              });  
+
+              });
 
             //game.move(possibleMoves[moveIndex]);
           };
@@ -69,12 +69,12 @@
 
           // illetgal move
           if (move === null) return 'snapback';
-             
+
           window.setTimeout(makeIntelligentMove, 250);
           //updateStatus();
         };
 
-        // update the board position after the piece snap 
+        // update the board position after the piece snap
         // for castling, en passant, pawn promotion
         var onSnapEnd = function() {
           board.position(game.fen());
@@ -120,7 +120,7 @@
           position: 'start',
           onDragStart: onDragStart,
           onDrop: onDrop,
-          onSnapEnd: onSnapEnd,
+          onSnapEnd: onSnapEnd
           //position: game.fen()//'r1bqkbnr/pp1ppppp/2n5/2p5/3PP3/5N2/PPP2PPP/RNBQKB1R  b KQkq - 0 3'
         };
         board = ChessBoard('board', cfg);
