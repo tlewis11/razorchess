@@ -15,5 +15,14 @@
   "dependencies": {
     "express": "^4.13.4",
     "pug": "^2.0.0-alpha7"
-  }
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RocketLLama/razorchess.git"
+  },
+  "bugs": {
+    "url": "https://github.com/RocketLLama/razorchess/issues"
+  },
+  "homepage": "https://github.com/RocketLLama/razorchess#readme"
 }
