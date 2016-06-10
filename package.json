@@ -19,10 +19,10 @@
   "devDependencies": {},
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/RocketLLama/razorchess.git"
+    "url": "git+https://github.com/blank-blank/razorchess.git"
   },
   "bugs": {
-    "url": "https://github.com/RocketLLama/razorchess/issues"
+    "url": "https://github.com/blank-blank/razorchess/issues"
   },
-  "homepage": "https://github.com/RocketLLama/razorchess#readme"
+  "homepage": "https://github.com/blank-blank/razorchess#readme"
 }
