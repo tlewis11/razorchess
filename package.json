@@ -4,6 +4,7 @@
   "description": "Express based chess game",
   "main": "razorchess.js",
   "scripts": {
+    "start": "node razorchess.js",
     "test": "echo \"no tests available\" && exit 0"
   },
   "keywords": [
@@ -16,7 +17,6 @@
     "express": "^4.13.4",
     "pug": "^2.0.0-alpha7",
     "stockfish": "6.0.5"
-
   },
   "devDependencies": {},
   "repository": {
