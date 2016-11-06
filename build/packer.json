@@ -1,0 +1,21 @@
+{
+  "builders": [
+    {
+      "type": "docker",
+      "image": "ubuntu",
+      "commit": true
+    }
+
+  ],
+
+  "post-processors": [
+    [
+      {
+        "type": "docker-tag",
+        "repository": "blankblank/razorchess",
+        "tag": "latest"
+      },
+      "docker-push"
+    ]
+  ]  
+}

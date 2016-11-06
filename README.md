@@ -11,3 +11,13 @@ npm start
 ```
 
 Point browser at localhost:8081
+
+
+Docker:
+
+Build image with:
+  {app_root}/build/build_docker_image.sh
+
+Run container with defaults:
+  {app_root}/run_docker_image.sh
+  
