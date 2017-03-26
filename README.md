@@ -4,14 +4,16 @@ open source chess game allowing to play against engine
 #Install
 
 ```
-git clone https://github.com/blank-blank/razorchess.git
-cd razorchess
-npm install
-npm start
+Linux/Mac: 
+
+
+Run locally:
+1. git clone https://github.com/blank-blank/razorchess.git
+2. cd razorchess  
+3. sh deploy.sh
+4. browse to localhost:8081 and enjoy.
+
 ```
-
-Point browser at localhost:8081
-
 
 Docker:
 
