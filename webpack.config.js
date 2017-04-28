@@ -1,6 +1,7 @@
 var path = require('path');
 var webpack = require("webpack");
 
+
 var DIST_PATH = path.resolve( __dirname, 'dist' );
 var SOURCE_PATH = path.resolve( __dirname, 'app' );
 

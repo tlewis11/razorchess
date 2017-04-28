@@ -4,10 +4,9 @@
   "description": "Express based chess game",
   "main": "razorchess.js",
   "scripts": {
-    "start": "node razorchess.js",
+    "start": "gulp",
     "test": "echo \"no tests available\" && exit 0",
-    "build": "gulp",
-    "dev": "gulp dev"
+    "build": "gulp"
   },
   "keywords": [
     "chess",
@@ -29,6 +28,7 @@
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-2": "^6.24.1",
     "gulp": "^3.9.1",
+    "gulp-open": "^2.0.0",
     "gulp-util": "^3.0.8",
     "webpack": "^2.4.1",
     "webpack-dev-server": "^2.4.5",
