@@ -5,7 +5,9 @@
   "main": "razorchess.js",
   "scripts": {
     "start": "node razorchess.js",
-    "test": "echo \"no tests available\" && exit 0"
+    "test": "echo \"no tests available\" && exit 0",
+    "build": "gulp",
+    "dev": "gulp dev"
   },
   "keywords": [
     "chess",
@@ -16,9 +18,22 @@
   "dependencies": {
     "express": "^4.13.4",
     "pug": "^2.0.0-alpha7",
+    "react": "^15.5.4",
+    "react-dom": "^15.5.4",
     "stockfish": "6.0.5"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "babel-core": "^6.24.1",
+    "babel-loader": "^7.0.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-2": "^6.24.1",
+    "gulp": "^3.9.1",
+    "gulp-util": "^3.0.8",
+    "webpack": "^2.4.1",
+    "webpack-dev-server": "^2.4.5",
+    "webpack-stream": "^3.2.0"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/blank-blank/razorchess.git"
