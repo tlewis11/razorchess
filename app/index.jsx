@@ -1,13 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-var SimpleComponent = React.createClass({
-    render: function () {
-        return (
-            <div>{this.props.message}</div>
-        );
-    }
-});
+import SimpleComponent from './components/SimpleComponent.jsx'
 
 ReactDOM.render(
     <SimpleComponent message="Hello, Earth."/>,

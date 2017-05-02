@@ -1,13 +1,12 @@
-var path = require('path');
-var webpack = require("webpack");
+let path = require('path');
 
 
-var DIST_PATH = path.resolve( __dirname, 'dist' );
-var SOURCE_PATH = path.resolve( __dirname, 'app' );
+let DIST_PATH = path.resolve(__dirname, 'dist');
+let SOURCE_PATH = path.resolve(__dirname, 'app');
 
 module.exports = {
     //file entry point
-    entry: SOURCE_PATH + '/index.js',
+    entry: SOURCE_PATH + '/index.jsx',
     //output file
     output: {
         path: DIST_PATH,
@@ -17,16 +16,9 @@ module.exports = {
     module: {
         loaders: [
             {
-                test: /.jsx?$/,
+                test: /.jsx$/,
                 loader: 'babel-loader',
                 exclude: /node_modules/,
-                query: {
-                    presets: [
-                        'es2015',
-                        'react',
-                        'stage-2'
-                    ]
-                }
             }
         ]
     }

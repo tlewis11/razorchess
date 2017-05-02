@@ -1,13 +1,13 @@
-var gulp = require('gulp');
-var util = require('gulp-util');
-var webpack = require('webpack');
-var webpackStream = require('webpack-stream');
-var webpackConfig = require('./webpack.config');
-var open = require('gulp-open');
+let gulp = require('gulp');
+let util = require('gulp-util');
+let webpack = require('webpack');
+let webpackStream = require('webpack-stream');
+let webpackConfig = require('./webpack.config.js');
+let open = require('gulp-open');
 
-var WebpackDevServer = require('webpack-dev-server');
+let WebpackDevServer = require('webpack-dev-server');
 
-var devUrl = "http://localhost:8080/webpack-dev-server/app/index.html";
+let devUrl = "http://localhost:8080/webpack-dev-server/app/index.html";
 
 
 gulp.task('default', ['run-dev']);
@@ -15,18 +15,18 @@ gulp.task('default', ['run-dev']);
 gulp.task('deploy', ['webpack'] , function() {
     return gulp.src('app/index.html')
         .pipe(gulp.dest('./dist'));
-})
+});
 
 gulp.task('webpack', function() {
     return gulp.src('app/index.js')
-        .pipe(webpackStream(webpackConfig))
+        .pipe(webpackStream(webpackConfig), webpack)
         .pipe(gulp.dest('dist/'));
 
 });
 
 gulp.task("dev", ["deploy"], function() {
 
-    var config = Object.create(webpack(webpackConfig));
+    let config = Object.create(webpack(webpackConfig));
     new WebpackDevServer(config, {
         // server and middleware options
     }).listen(8080, "localhost", function(err) {
