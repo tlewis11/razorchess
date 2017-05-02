@@ -23,3 +23,18 @@ Build image with:
 Run container with defaults:
   {app_root}/run_docker_image.sh
   
+
+
+**React demo nonsense:**
+
+install
+
+```
+yarn install
+```
+
+run
+```
+npm start
+```
+
