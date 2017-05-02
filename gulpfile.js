@@ -19,7 +19,7 @@ gulp.task('deploy', ['webpack'] , function() {
 
 gulp.task('webpack', function() {
     return gulp.src('app/index.js')
-        .pipe(webpackStream(webpackConfig), webpack)
+        .pipe(webpackStream(webpackConfig, webpack))
         .pipe(gulp.dest('dist/'));
 
 });
