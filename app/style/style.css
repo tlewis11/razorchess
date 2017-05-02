@@ -1,0 +1,35 @@
+.board .row:nth-child(even) div:nth-child(even) .tile {
+    background-color: #f0d9b5;
+}
+
+.board .row:nth-child(even) div:nth-child(odd) .tile {
+    background-color: #b58863;
+}
+
+.board .row:nth-child(odd) div:nth-child(even) .tile {
+    background-color: #b58863;
+}
+
+.board .row:nth-child(odd) div:nth-child(odd) .tile {
+    background-color: #f0d9b5;
+}
+
+.tile {
+    display: inline-block;
+}
+
+.board .tile {
+    width: 64px;
+    height: 64px;
+}
+
+.board {
+    min-width: 768px;
+    max-width: 768px;
+    min-height: 768px;
+    max-height: 768px;
+}
+
+.board .row div {
+    max-height: 64px;
+}
