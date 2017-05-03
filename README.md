@@ -3,10 +3,12 @@
 
 # Contributing 
 
-prerequisites:
+## Prerequisites:
   - yarn
   - npm
   - nodejs
+
+## Run Development Mode:
 
 0. git clone https://github.com/tlewis11/razorchess.git
 1. cd razorchess
