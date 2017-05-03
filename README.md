@@ -1,4 +1,4 @@
-#Razorchess
+# Razorchess
 # Razorchess is an open source Chess game which allows the user to play against the Stockfish chess engine.
 
 # Contributing 
