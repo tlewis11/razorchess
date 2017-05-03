@@ -1,40 +1,16 @@
 #Razorchess
-open source chess game allowing to play against engine
+# Razorchess is an open source Chess game which allows the user to play against the Stockfish chess engine.
 
-#Install
+# Contributing 
 
-```
-Linux/Mac: 
+prerequisites:
+  - yarn
+  - npm
+  - nodejs
 
+0. git clone https://github.com/tlewis11/razorchess.git
+1. cd razorchess
+2. yarn install
+3. npm run dev
 
-Run locally:
-1. git clone https://github.com/blank-blank/razorchess.git
-2. cd razorchess  
-3. sh deploy.sh
-4. browse to localhost:8081 and enjoy.
-
-```
-
-Docker:
-
-Build image with:
-  {app_root}/build/build_docker_image.sh
-
-Run container with defaults:
-  {app_root}/run_docker_image.sh
-  
-
-
-**React demo nonsense:**
-
-install
-
-```
-yarn install
-```
-
-run
-```
-npm start
-```
 
