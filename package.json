@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "gulp",
     "test": "echo \"no tests available\" && exit 0",
-    "webpack": "webpack"
+    "webpack": "webpack",
+    "start": "node razorchess.js"
   },
   "keywords": [
     "chess",
@@ -16,13 +17,14 @@
   "license": "ISC",
   "dependencies": {
     "bootstrap": "^3.3.7",
-    "express": "^4.13.4",
+    "express": "^4.16.2",
     "file-loader": "^0.11.1",
+    "path": "^0.12.7",
     "pug": "^2.0.0-alpha7",
     "react": "^15.5.4",
     "react-bootstrap": "^0.31.0",
     "react-dom": "^15.5.4",
-    "stockfish": "6.0.5",
+    "stockfish": "^6.0.5",
     "url-loader": "^0.5.8"
   },
   "devDependencies": {
