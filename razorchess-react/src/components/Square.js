@@ -19,7 +19,7 @@ export default class Square extends Component {
     });
 	return (
 		  <div className={classes}>
-			square
+			{this.props.children}
 		  </div>
     );
   }

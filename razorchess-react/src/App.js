@@ -4,6 +4,11 @@ import './App.css';
 import Chessboard from './components/Chessboard'
 
 class App extends Component {
+  constructor(props) {
+	super(props);
+  	this.state = { fen: 'rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1'};
+  }
+
   render() {
 	var board_config = {
 		lightColor: '#ffffb3',
@@ -11,7 +16,7 @@ class App extends Component {
 	}
     return (
       <div className="App">
-		<Chessboard config={board_config} orientation="white"/>
+		<Chessboard config={board_config} orientation="white" fen={this.state.fen}/>
       </div>
     );
   }
