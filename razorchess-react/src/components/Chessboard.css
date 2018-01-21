@@ -1,0 +1,10 @@
+.react-chessboard {
+  display: flex;
+  width: 500px;
+  height: 500px;
+  flex-wrap: wrap;
+}
+.react-chessboard--flipped,
+.react-chessboard--flipped .react-chessboard-square {
+  transform: rotate(180deg);
+}

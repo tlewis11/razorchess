@@ -1,0 +1,15 @@
+.react-chessboard-square {
+  display: flex;
+  width: 12.5%;
+  height: 12.5%;
+  position: relative;
+}
+.react-chessboard-square--white {
+  background-color: #fff;
+}
+.react-chessboard-square--black {
+  background-color: #aaa;
+}
+.react-chessboard-square--over {
+  background-color: #ff0000;
+}
