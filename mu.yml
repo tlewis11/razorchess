@@ -1,4 +1,5 @@
 service:
+  - name: chessengine
   healthEndpoint: /health
   port: 8081
   pathPatterns:

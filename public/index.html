@@ -1,6 +1,7 @@
 <html>
 <head>
 <link rel="stylesheet" type="text/css" href="css/chessboard-0.3.0.min.css" />
+<link rel="stylesheet" type="text/css" href="css/razorchess.css" />
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
 <script src="js/chess.js"></script>
 
@@ -39,9 +40,9 @@
           var makeIntelligentMove = function() {
           var possibleMoves = game.moves();
 
-          $(possibleMoves).each(function(i, v){
-                                    console.log(i + ' : ' + v);
-                                });
+          //$(possibleMoves).each(function(i, v){
+          //                          console.log(i + ' : ' + v);
+          //                      });
           // game over
           if (possibleMoves.length === 0) return;
 
@@ -54,7 +55,7 @@
                 var from_square = data.slice(0,2);
                 var to_square = data.slice(2,4);
                 game.move({ from: from_square, to: to_square });
-                console.log(from_square, to_square);
+                // console.log(from_square, to_square);
                 updateStatus();
 
                 board.position(game.fen());
@@ -132,13 +133,30 @@
 
 </head>
 <body>
-<div id="board" style="width: 400px"></div>
-    <input type="button" id="startBtn" value="Start" />
-    <input type="button" id="clearBtn" value="Clear" />
+<div class="content">
+	<div id="left_column" class="column">
+		<ul>
+			<li>
+				<a class="opening_button" href="">Reti</a>
+			</li>
+		</ul>
+	</div>
+	<div id="middle_column" class="column">
+		<div id="board" style="width: 400px"></div>
+			<input type="button" id="startBtn" value="Start" />
+			<input type="button" id="clearBtn" value="Clear" />
 
-<p>Status: <span id="status"></span></p>
-<p>FEN: <span id="fen"></span></p>
-<p>PGN: <span id="pgn"></span></p>
+		<div class="game_info">
+			<p>Status: <span id="status"></span></p>
+			<p>FEN: <span id="fen"></span></p>
+			<p>PGN: <span id="pgn"></span></p>
+		</div>
+	</div>
+	<div id="right_column" class="column">
+		right
+	</div>
+</div>
+
 </body>
 </html>
 
