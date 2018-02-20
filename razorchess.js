@@ -48,7 +48,7 @@ app.get('/calculate', function (req, res) {
 });
 
 
-app.listen(8081); //todo: make this a config option
+app.listen(8080); //todo: make this a config option
 //=======
 //runs stockfish executable and outputs uci responses to console
 
