@@ -26,6 +26,9 @@ var myLogger = function (req, res, next) {
 app.use(myLogger);
 app.use(express.static(path.join(__dirname, 'public')));
 
+app.get('/health', function (req, res) {
+    res.send('HEALTHY!');
+});
 
 app.get('/game', function (req, res) {
     res.sendfile('./public/index.html');

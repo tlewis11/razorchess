@@ -1,4 +1,5 @@
 service:
+  healthEndpoint: /health
   port: 8081
   pathPatterns:
   - /*
@@ -6,3 +7,9 @@ service:
     source:
       provider: GitHub
       repo: tlewis11/razorchess
+
+environments:
+  - name: acceptance
+    provider: ecs      
+
+
