@@ -2,6 +2,9 @@
 Razorchess is an open source Chess game which allows the user to play against the Stockfish chess engine.
 
 # Run Razorchess locally
+0. Clone this repo
+`git clone https://github.com/tlewis11/razorchess`
+
 1. Build and run Docker Container
 ```
 cd razorchess
