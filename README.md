@@ -1,14 +1,13 @@
 # Razorchess
 Razorchess is an open source Chess game which allows the user to play against the Stockfish chess engine.
 
-A playable server is available on Dockerhub.
-
-## Run Docker Container
-docker run -p 8081:8081 -d tlewis11/razorchess
-
-## Prerequisites:
-  - npm
-  - nodejs
+# Run Razorchess locally
+1. Build and run Docker Container
+```
+docker build razorchess-frontend 
+docker run -p 8081:8081
+```
+2. Browse to localhost:8081
 
 ## Build Razorchess
 
@@ -16,3 +15,8 @@ docker run -p 8081:8081 -d tlewis11/razorchess
 1. cd razorchess
 2. npm install
 3. npm start
+
+# Contribute:
+
+
+
