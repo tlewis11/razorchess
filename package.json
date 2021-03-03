@@ -20,7 +20,7 @@
     "express": "^4.16.2",
     "file-loader": "^0.11.1",
     "path": "^0.12.7",
-    "pug": "^2.0.0-alpha7",
+    "pug": "^3.0.1",
     "react": "^15.5.4",
     "react-bootstrap": "^0.31.0",
     "react-dom": "^15.5.4",
