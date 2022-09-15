@@ -16,7 +16,7 @@
   "author": "tim lewis",
   "license": "ISC",
   "dependencies": {
-    "bootstrap": "^3.3.7",
+    "bootstrap": "^3.4.1",
     "express": "^4.16.2",
     "file-loader": "^0.11.1",
     "path": "^0.12.7",
